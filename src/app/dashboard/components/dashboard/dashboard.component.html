@@ -1,0 +1,119 @@
+<div class="dashboard-container">
+    <div class="add-post">
+        <button (click)="addPost(itemInfo)">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </button>
+    </div>
+    <!-- <div class="form-group">
+        <label>Enter address</label>
+        <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+      </div> -->
+    <div class="search-container" [class.searching]="searching">
+        <form [formGroup]="searchForm" (ngSubmit)="getProducts('SEARCH_POSTS')">
+            <div class="form-group">
+                <select formControlName="type" name="type" class="form-control"
+                    [class.filled]="searchForm.get('type').value">
+                    <option value="">Select type</option>
+                    <option [ngValue]="type" *ngFor="let type of searchOptions.TYPES">{{type}}</option>
+                </select>
+                <label for="type" class="form-label">Type</label>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="subType" class="form-control"
+                    [class.filled]="searchForm.get('subType').value" />
+                <label for="subType" class="form-label">Sub Type</label>
+            </div>
+            <div class="form-group btn-container">
+                <button type="submit" class="btn btn-block" [disabled]="searchForm.invalid">Search</button>
+            </div>
+        </form>
+        <button class="search" (click)="searchPost()"></button>
+    </div>
+    <div class="result-container">
+        <div class="product-list">
+            <ng-container *ngIf="users?.length else noItems">
+                <h2><strong>{{users.length}}</strong> Posts found near you</h2>
+                <div *ngFor="let user of users; let i = index" class="order-item">
+                    <div class="order-overview">
+                        <div>
+                            <div>Name: <b>{{user[0].name}}</b></div>
+                            <div>User Name: {{user[0].userName}}</div>
+                        </div>
+                        <div class="share-icons">
+                            <!-- <button>
+                                <i class="fa fa-facebook-square"></i>
+                            </button> -->
+                            <div [ngClass]="user.userLevelPostType" class="order-status">
+                                {{searchOptions.POST_DISPLAY_TEXT[user?.userLevelPostType]}}</div>
+                            <div style="display: flex">
+                                <div class="fb-share"><a target="_blank"
+                                        [attr.href]="'https://www.facebook.com/sharer/sharer.php?u=' + fbShareUrl"><i
+                                            class="fa fa-facebook-square"></i></a></div>
+                                <button
+                                    (click)="activeModal?.close();util.chatOptions.open = true; util.chatOptions.minimize = false;"
+                                    *ngIf="user[0]?.userName !== currentUser?.userName">
+                                    <i class="fa fa-comments-o"></i>
+                                </button>
+                                <button (click)="notifyUser(user[0])"
+                                    *ngIf="user[0]?.userName !== currentUser?.userName">
+                                    <i class="fa fa-bell" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div [attr.id]="'user'+i" [ngbCollapse]="user['isCollapsed']">
+                        <table>
+                            <tbody>
+                                <tr *ngFor="let item of user">
+                                    <td>{{item.productType}}</td>
+                                    <td>{{item.subType}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{searchOptions.POST_DISPLAY_TEXT[item.postType]}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button type="button" class="btn collapse-btn" (click)="user['isCollapsed'] = !user['isCollapsed']"
+                        [attr.aria-expanded]="!user['isCollapsed']" [attr.aria-controls]="'user'+i">
+                        {{user['isCollapsed'] ? 'Show less' : 'Show more'}}
+                        <i class="fa"
+                            [ngClass]="{'fa-angle-up': user['isCollapsed'], 'fa-angle-down': !user['isCollapsed']}"></i>
+                    </button>
+                </div>
+            </ng-container>
+            <ng-template #noItems>
+                <div class="no-posts">Sorry no posts found near your location. Please modify your location to serve you
+                    better</div>
+            </ng-template>
+        </div>
+        <div class="map-container">
+            <agm-map [latitude]="coordinates?.latitude" [longitude]="coordinates?.longitude" [zoom]="coordinates?.zoom"
+                [disableDefaultUI]="false" [zoomControl]="true" [scrollwheel]="true" (mapClick)="mapClicked($event)" [fullscreenControl]="true">
+                <agm-marker [latitude]="coordinates?.latitude" [longitude]="coordinates?.longitude"
+                    (dragEnd)="markerDragEnd($event)" [markerDraggable]="true">
+                </agm-marker>
+                <div *ngFor="let posts of users;">
+                    <agm-marker *ngFor="let user of posts; let i = index" (markerClick)="clickedUser(user, content)"
+                        [latitude]="+user?.latitude" [longitude]="+user?.longitude"
+                        [label]="{color: 'black', text: user?.name?.charAt(0)?.toUpperCase()}"
+                        (dragEnd)="markerDragEnd($event)" [markerDraggable]="false" [iconUrl]="{
+                            url: markerConfig?.BALLOON_COLOR[user?.postType],
+                            scaledSize: markerConfig?.ICON_CONFIG?.scaledSize,
+                            labelOrigin: markerConfig?.ICON_CONFIG?.labelOrigin
+                        }" [title]="user?.name">
+                    </agm-marker>
+                </div>
+                <agm-circle [latitude]="coordinates?.latitude" [longitude]="coordinates?.longitude" [radius]="10000" [fillColor]="'red'">
+                </agm-circle>
+            </agm-map>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <app-item [productDetails]="productDetails" [modalRef]="activeModal" (notifyUser)="notifyUser($event)"></app-item>
+</ng-template>
+
+<ng-template #itemInfo let-modal>
+    <app-item-info [modalRef]="activeModal" [actionType]="'add'" (itemUpdate)="postPublished($event)"></app-item-info>
+</ng-template>

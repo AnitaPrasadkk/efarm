@@ -1,0 +1,344 @@
+.dashboard-container {
+.no-posts {
+  text-align: center;
+  font-weight: bold;
+  padding: 25px;
+}
+  .form-group + .form-group {
+    margin: 0;
+  }
+  .result-container {
+    display: flex;
+    height: calc(100vh - 64px);
+    overflow-y: hidden;
+    .product-list {
+      width: 60%;
+      background-color: #ccc;
+      color: #000;
+      border: 1px solid #c3aeae;
+      padding: 15px;
+      overflow-y: auto;
+        /* scrollbar width */
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        /* scrollbar track */
+        &::-webkit-scrollbar-track {
+          background: #eee;
+        }
+
+        /* scrollbar handle */
+        &::-webkit-scrollbar-thumb {
+          border-radius: 1rem;
+          background-color: #00d2ff;
+          background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+        }
+    }
+    .map-container {
+      width: 40%;
+    }
+  }
+}
+
+
+.product-list{
+  h2 {
+      margin-bottom: 0;
+  }
+  .order-item{
+      border-bottom: 1px solid #c3aeae;
+      height: auto;
+      padding: 15px 0;
+      font-size: medium;
+      &:last-child {
+        border-bottom: 0;
+      }
+      > .collapse-btn {
+          border: 0;
+          margin: auto;
+          display: block;
+          font-weight: bold;
+          background: none;
+          box-shadow: none;
+          color: #cc0000;
+          &:focus {
+              box-shadow: none;
+          }
+          i {
+              vertical-align: inherit;
+              font-size: 25px;
+          }
+      }
+      > div{
+          margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;    }
+  .row-2{
+  font-size: 15px;
+  }
+  .row-4{
+      text-align: center;
+      justify-content: center;
+      height: 44px;
+      margin: 0;
+      align-items: center;
+      border-top: 1px solid #c3aeae;
+      > button{
+          background: transparent;
+      border: none;width: 100%;
+      color: #28a745;
+      text-align: center;
+      }
+  }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr {background-color: #9c9ea0;}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+.collapse {
+  display: block;
+  animation: accordionIn 0.45s normal ease-in-out both 1; 
+  &.show {
+      display: none;
+      animation: accordionOut 0.45s alternate ease-in-out both 1;
+  }
+}
+  }
+}
+:host{
+  display: block;
+}
+
+.ICanHelp {
+  background: #45e245;
+  border: 1px solid #0ea20e;
+}
+.HelpMe {
+  background: #ea5a5a;
+  border: 1px solid #bf0d0d;
+}
+.both {
+  background: #f3ca32;
+  border: 1px solid #b5951e;
+}
+.order-status {
+  color: #000;
+  border-radius: 50px;
+  padding: 5px 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.share-icons {
+  display: flex;
+  align-items: center;
+  .fb-share {
+    padding: 1px 6px ;
+    i {
+    font-size: 25px;
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    // margin: 0 5px;
+    i {
+      font-size: 25px;
+      color: #007bff;
+    }
+  }
+}
+@keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform:scale(0.9) rotateX(-60deg);
+    transform-origin: 50% 0;
+  }
+  100% {
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes accordionOut {
+    0% {
+       opacity: 1;
+       transform:scale(1);
+     }
+     100% {
+          opacity:0;
+           transform:scale(0.9) rotateX(-60deg);
+       }
+}
+.add-post {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 4;
+  button {
+    background: none;
+    border: 0;
+  }
+  i {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 766px) {
+  .dashboard-container {
+    .search-container {
+    &.searching {
+      .search {
+        top: 10px;
+        right: 15px;
+      }
+      form {
+        padding: 40px 25px 25px 25px;
+      }
+    }
+    form {
+      flex-direction: column;
+      .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      button {
+        margin: 0 auto;
+      }
+    }
+  }
+  .result-container {
+    flex-direction: column;
+    height: auto;
+    > .product-list, .map-container {
+      width: 100%;
+      .map-container {
+        width: 40%;
+        min-height: 300px;
+      }
+    }
+  }
+  .share-icons {
+    flex-direction: column;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    .order-status {
+      margin-top: 10px;
+    }
+  }
+  .map-container {
+    height: 500px;
+    width: 100%;
+    display: block;
+  }
+}
+}
+
+
+
+// Styles for Search field
+
+
+.search-container {
+  top: 0;
+  right: 0;
+  width:auto;
+  &.searching {
+    position: relative;
+    form {
+      height: auto;
+      padding: 25px;
+      width: 100%;
+      display: flex;
+      .form-group {
+        display: block;
+      }
+    }
+    .search {
+      top: 27px;
+      right: 60px;
+      background: #151515;
+      z-index: 2;
+      margin: 0;
+      &::before {
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 4px;
+        background: white;
+      }
+      &::after {
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 4px;
+        border: none;
+        background: white;
+        border-radius: 0%;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  form {
+    height: 0;
+    transition: all 1s;
+  }
+  .form-group {
+    width: 33.33%;
+    padding: 0 15px;
+    display: none;
+  }
+  .search {
+    border: 0;
+    position: absolute;
+    margin: auto;
+    top: 17px;
+    right: 55px;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    &:hover {
+      cursor: pointer;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        margin: auto;
+        top: 10px;
+        right: 0;
+        bottom: 0;
+        left: 10px;
+        width: 10px;
+        height: 3px;
+        background: #cc0000;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: all 0.5s;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        margin: auto;
+        top: -5px;
+        right: 0;
+        bottom: 0;
+        left: -5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 3px solid #cc0000;
+        transition: all 0.5s;
+    }
+  }
+}

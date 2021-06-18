@@ -1,0 +1,17 @@
+<div class="modal-container custom-modal">
+    <div class="modal-body">
+        <div *ngIf="errorObj">
+            <div class="error-icon" [class.success]="errorObj?.isSuccess">
+                <i class="fa fa-exclamation-circle" aria-hidden="true" *ngIf="!errorObj?.isSuccess"></i>
+                <i class="fa fa-check" aria-hidden="true" *ngIf="errorObj?.isSuccess"></i>
+            </div>
+            <h2 *ngIf="errorObj?.header">{{errorObj.header}}
+                <i class="fa fa-frown-o" aria-hidden="true"></i>
+            </h2>
+            <p *ngIf="errorObj?.text">{{errorObj.text}}</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" [class.success-btn]="errorObj?.isSuccess" (click)="activeModal.close('ok')">Ok</button>
+    </div>
+</div>

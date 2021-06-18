@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+  }
+  body {
+    background: #252525;
+    overflow-y: auto;
+  }
+  .app-container {
+    margin-top: 64px;
+    height: 100%;
+  }
+  // Styles for side bar navigation menu
+  .mat-toolbar.mat-primary {
+      position: fixed;
+      top: 0;
+      z-index: 4;
+  }
+  mat-nav-list{
+     a  .material-icons{
+      margin-top: -3px;
+      margin-left: 4px;
+      /* margin-top: -1px; */
+      display: inline-block;
+    }
+  }
+  .mat-drawer-transition .mat-drawer-content {
+    height: 100%;
+}
+.mat-drawer:not(.mat-drawer-side) {
+    width: 25%;
+    z-index: 4;
+    top: 64px;
+}
+.mat-drawer-container {
+    background-color: #ffffff;
+}
+.mat-drawer-container, .mat-drawer-content {
+  position: static;
+}
+
+.mat-icon-button {
+  &:focus {
+    outline: none;
+  }
+  mat-icon.mat-icon.notranslate material-icons:focus {
+    outline: none;
+  }
+}
+.account-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+  height: inherit;
+  i {
+    font-size: 50px;
+    margin-right: 15px;
+  }
+}
+.mat-toolbar.mat-primary {
+  background: #cc0000;
+}
+.chat-container {
+  position: fixed;
+  bottom: 0;
+  right: 90px;
+  z-index: 2;
+  .chat-icon {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-color: #cc0000;
+    border-radius: 50%;
+    animation: animSpin 1.8s ease-in-out forwards infinite, animFade 1.8s ease forwards infinite;
+    i {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      font-size: 45px;
+    }
+  }
+  .chat-content {
+    width: 0;
+    height: 0;
+    transition: all 1s;
+    position: relative;
+    &.active {
+      width: 350px;
+      // height: 535px;
+      height: calc(100vh - 65px);
+      .chat-window {
+        visibility: visible;
+        // height: 500px;
+        height: calc(100vh - 100px);
+        width: 100%;
+      }
+    }
+    &.mimimized {
+      width: 350px;
+      height: 36px;
+    }
+    .chat-control {
+      display: flex;
+      justify-content: flex-end;
+      background: #212529f7;
+      padding: 6px 10px;
+      button {
+        background: none;
+        border: 0;
+      }
+      i {
+        color: #fff;
+        padding-left: 10px;
+      }
+      .minimized-btn {
+        i {
+          vertical-align: top;
+        }
+      }
+    }
+    .chat-window {
+      visibility: hidden;
+    }
+  }
+}
+.notification-container {
+  position: fixed;
+  width: 55px;
+  top: 80px;
+  right: 20px;
+  z-index: 2;
+  button {
+      background: none;
+      border: 0;
+      border: 2px solid #fff;
+      width: 55px;
+      height: 55px;
+      position: relative;
+      background-color: #cc0000;
+      border-radius: 50%;
+      i {
+          color: #fff;
+          font-size: 25px;
+      }
+  }
+  .count {
+      font-family: Arial;
+      font-size: 12px;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 2px 8px;
+      line-height: 100%;
+      border: 2px #fff solid;
+      border-radius: 63px;
+      background: #3498db;
+      transform: scale(0.5);
+      transition-timing-function: ease-out;
+      color: #fff;
+      transform: scale(1);
+  }
+}
+@keyframes animSpin {
+	0% { -webkit-transform: perspective(120px) rotateY(180deg) rotateX(0deg); transform: perspective(120px) rotateY(181deg) rotateX(0deg); 
+  }
+  50% { -webkit-transform: perspective(120px) rotateY(0deg) rotateX(0deg); transform: perspective(120px) rotateY(0deg) rotateX(0deg); 
+  }
+	100% { -webkit-transform: perspective(120px) rotateY(180deg); transform: perspective(120px) rotateY(181deg); }
+}
+@keyframes animFade {
+	0% { opacity: .95; }
+	100% { opacity: 1; }
+}
+@media (max-width: 766px) {
+  .app-container {
+    margin-top: 56px;
+  }
+  .mat-drawer:not(.mat-drawer-side) {
+    width: 60%;
+    top: 56px;
+    z-index: 4;
+  }
+  .chat-container {
+    left: 10px;
+  }
+}

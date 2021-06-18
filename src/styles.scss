@@ -1,0 +1,270 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #000;
+    background-color:#fafafa;
+}
+
+//Styles for typeahead
+.container {
+.dropdown-item.active {
+    background-color: #27a626;
+}
+.dropdown-menu.show {
+    width: 75vw;
+    border-radius: 10px;
+    padding: 0;
+}
+}
+.current-user-name {
+  display: inline-block;
+  position: fixed;
+  right: 100px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  @keyframes modal-b-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.5;
+    }
+}
+
+@keyframes modal-fade {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-backdrop {
+    opacity: 0.5;
+    animation: ease-in-out .5s modal-b-fade;
+    transition: all .5s ease-in-out;
+}
+
+.modal {
+    top: -100px;
+    animation: ease-in-out .5s modal-fade;
+    transition: all .5s ease-in-out;
+
+    &.show {
+        top: 0;
+    }
+}
+
+.modal-container.custom-modal {
+    padding: 20px;
+    .modal-header {
+        border: 0;
+        h1, h2, h3 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 26px;
+        }
+        button:focus {
+            outline: none;
+        }
+    }
+    .modal-footer{
+        border: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+agm-map {
+    height: 100%;
+}
+button {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-group select.form-control {
+  font-size: 0;
+  &:focus, &.filled {
+      font-size: 16px;
+      option {
+          font-size: 16px;
+      }
+  }
+}
+.form-container {
+    margin-top: 25px;
+    .form-group {
+    .form-control {
+        padding: 5px 0 5px 25px;
+    }
+    .form-label {    
+        left: 25px;
+    }
+}
+}
+i.input-fixed {
+    position: absolute;
+    top: 7px;
+    display: inline-block;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    i {
+        padding-left: 10px;
+    }
+}
+.btn {
+    background: #fff;
+    padding: 5px;
+    width: 150px;
+    height: 35px;
+    border: 1px solid #e00a0a;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    box-shadow: 0 50px #cc0000 inset;
+    color: #fff;
+    border-radius: 20px;
+    &.success-btn {
+      box-shadow: 0 50px #1fa229 inset;
+      border: 1px solid #28a745;
+      &:hover, &:focus {
+        background-color: #cc0000;
+      }
+    }
+  }
+  .btn:hover, .btn:focus {
+    box-shadow: 0 0 #cc0000 inset;
+    background-color: #1fa229;
+    color: #fff;
+    outline: none;
+  }
+  thead {
+    background-color: #d01c1c;
+    color: #fff;
+  }
+  .form-group {
+    position: relative;
+    font-size: 15px;
+    color: #666;
+  }
+  .form-group + .form-group {
+    margin-top: 30px;
+  }
+  .form-group .form-label {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    top: 5px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .form-group .form-control {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    height: 35px;
+    background: none;
+    border: none;
+    padding: 5px 5px 5px 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-bottom: 1px solid #777;
+    color: #555;
+  }
+  .form-group .form-control:invalid {
+    outline: none;
+  }
+  .form-group .form-control:focus, .form-group .form-control.filled {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0f7aec;
+  }
+  .form-group .form-control:focus + .form-label + i, .form-group .form-control.filled + .form-label + i {
+    color: #0f7aec;
+  }
+  .form-group .form-control:focus + .form-label, .form-group .form-control.filled + .form-label {
+    font-size: 14px;
+    color: #0f7aec;
+    font-weight: bold;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  form.submitted .form-group .form-control.ng-invalid + .form-label,
+  form.submitted .form-group .form-control.ng-invalid + .form-label + i {
+    color: #f44336 !important;
+  }
+  .alert {
+    color: #f00;
+    font-size: 16px;
+    padding: 30px 25px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  tr {background-color: #9c9ea0;}
+  tr:nth-child(odd) {background-color: #f2f2f2;}
+
+  .add-post {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 4;
+    button {
+      background: none;
+      border: 0;
+    }
+    i {
+      color: white;
+      font-size: 30px;
+    }
+  }
+  .popover.notification-pop-up {
+    min-width: 450px;
+    left: 15px !important;
+    border: 2px solid grey;
+    transition: all .5s linear;
+    @media (max-width: 766px) {
+      min-width: 350px;
+    }
+    .popover-body {
+      max-height: 300px;
+      overflow: auto;
+      padding: 0;
+      /* scrollbar width */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* scrollbar track */
+      &::-webkit-scrollbar-track {
+        background: #eee;
+      }
+
+      /* scrollbar handle */
+      &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: #00d2ff;
+        background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+      }
+      .notification-content div.notify-msg:hover {
+        margin: 2px;
+      }
+    }
+  }

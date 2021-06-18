@@ -1,0 +1,11 @@
+{
+    "response": {
+        "details": {
+            "id": "123"
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

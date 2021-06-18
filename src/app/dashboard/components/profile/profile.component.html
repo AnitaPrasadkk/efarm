@@ -1,0 +1,119 @@
+<div class="profile-container">
+    <div class="add-post">
+        <button (click)="actionItems('add')">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <div *ngIf="profileService.profilePosts?.length else noProfilePost" class="order-item">
+        <div class="order-overview">
+            <div>Name: <b>{{profileService.profilePosts[0]?.name}}</b></div>
+            <div>User Name: {{profileService.profilePosts[0]?.userName}}</div>
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="publishHeading">
+                    <h5 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#publishAcc"
+                            aria-expanded="true" aria-controls="publishAcc">
+                            e-Farm! Requests <span
+                                class="badge badge-pill badge-outline-primary">{{profileService.productDetails['ICanHelp']?.length}}</span>
+                        </a>
+                    </h5>
+                </div>
+
+                <div id="publishAcc" class="panel-collapse collapse show" aria-labelledby="publishHeading"
+                    data-parent="#accordion">
+                    <div class="panel-body">
+                        <table *ngIf="profileService.productDetails['ICanHelp'] else noIcanhelpPost">
+                            <thead>
+                                <th>Type</th>
+                                <th>SubType</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of profileService.productDetails['ICanHelp']">
+                                    <td>{{item.productType}}</td>
+                                    <td>{{item.subType}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>
+                                        <button class="edit" (click)="actionItems('edit', item)"><i
+                                                class="fa fa-pencil"></i></button>
+                                        <button class="delete" (click)="actionItems('delete', item)"><i
+                                                class="fa fa-trash"></i></button>
+                                        <button class="view" (click)="actionItems('view', item)"><i
+                                                class="fa fa-info-circle"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ng-template #noIcanhelpPost>
+                            <div class="post-not-found">
+                            It seems that you didn't have excess item to donate.
+                        </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" id="requestHeading">
+                    <h5 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                            href="#requestAcc" aria-expanded="true" aria-controls="requestAcc">
+                            Help Me Requests <span
+                                class="badge badge-pill badge-outline-primary">{{profileService.productDetails['HelpMe']?.length}}</span>
+                        </a>
+                    </h5>
+                </div>
+                <div id="requestAcc" class="panel-collapse collapse" aria-labelledby="requestHeading"
+                    data-parent="#accordion">
+                    <div class="panel-body">
+                        <table *ngIf="profileService.productDetails['HelpMe'] else noHelpMePost">
+                            <thead>
+                                <th>Product Type</th>
+                                <th>Sub Type</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of profileService.productDetails['HelpMe']">
+                                    <td>{{item.productType}}</td>
+                                    <td>{{item.subType}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>
+                                        <button class="edit" (click)="actionItems('edit', item)"><i
+                                                class="material-icons">edit</i></button>
+                                        <button class="delete" (click)="actionItems('delete', item)"><i
+                                            class="material-icons">
+                                            delete
+                                          </i></button>
+                                        <button class="view" (click)="actionItems('view', item)"><i
+                                                class="material-icons">info</i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ng-template #noHelpMePost>
+                            <div class="post-not-found">
+                            It seems that you didn't made any request.
+                        </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #noProfilePost>
+        <div class="no-profile-posts">
+            Sorry, unable to load your profile now.
+        </div>
+    </ng-template>
+</div>
+<ng-template #itemInfo let-modal>
+    <app-item-info [modalRef]="activeModal" [itemObj]="itemObj" [actionType]="actionType"
+        (itemUpdate)="onActionSuccess($event)"></app-item-info>
+</ng-template>
+<ng-template #itemPreview let-modal>
+    <app-item [productDetails]="itemObj" [modalRef]="activeModal" [showShareOpts]="false"></app-item>
+</ng-template>

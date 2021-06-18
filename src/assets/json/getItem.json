@@ -1,0 +1,147 @@
+{
+    "response": {
+        "details": {
+            "sample.test3@gmail.com": [
+                {
+                    "id": 3,
+                    "userName": "sample.test3@gmail.com",
+                    "productType": "Food",
+                    "subType": "Rice",
+                    "latitude": "13.0472730",
+                    "longitude": "80.0945327",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                }
+            ],
+            "sample.test7@gmail.com": [
+                {
+                    "id": 7,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472770",
+                    "longitude": "80.0945367",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                }
+            ],
+            "sample.test2@gmail.com": [
+                {
+                    "id": 2,
+                    "userName": "sample.test2@gmail.com",
+                    "productType": "Food",
+                    "subType": "Rice",
+                    "latitude": "13.0472720",
+                    "longitude": "80.0945317",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                }
+            ],
+            "sample.test8@gmail.com": [
+                {
+                    "id": 8,
+                    "userName": "sample.test8@gmail.com",
+                    "productType": "Food",
+                    "subType": "Oil",
+                    "latitude": "13.0472780",
+                    "longitude": "80.0945507",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25liters"
+                },
+                {
+                    "id": 11,
+                    "userName": "sample.test8@gmail.com",
+                    "productType": "Food",
+                    "subType": "Oil",
+                    "latitude": "13.0472710",
+                    "longitude": "80.0945707",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "2 liters"
+                }
+            ],
+            "sample.test5@gmail.com": [
+                {
+                    "id": 5,
+                    "userName": "sample.test5@gmail.com",
+                    "productType": "Food",
+                    "subType": "Rice",
+                    "latitude": "13.0472750",
+                    "longitude": "80.0945347",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                }
+            ],
+            "sample.test1@gmail.com": [
+                {
+                    "id": 1,
+                    "userName": "sample.test1@gmail.com",
+                    "productType": "Food",
+                    "subType": "Rice",
+                    "latitude": "13.0472709",
+                    "longitude": "80.0945307",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                }
+            ],
+            "sample.test4@gmail.com": [
+                {
+                    "id": 4,
+                    "userName": "sample.test4@gmail.com",
+                    "productType": "Food",
+                    "subType": "Rice",
+                    "latitude": "13.0472740",
+                    "longitude": "80.0945337",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                }
+            ],
+            "sample.test6@gmail.com": [
+                {
+                    "id": 6,
+                    "userName": "sample.test6@gmail.com",
+                    "productType": "Food",
+                    "subType": "Ghee",
+                    "latitude": "13.0472760",
+                    "longitude": "80.0945357",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                },
+                {
+                    "id": 9,
+                    "userName": "sample.test6@gmail.com",
+                    "productType": "Food",
+                    "subType": "Ghee",
+                    "latitude": "13.0472790",
+                    "longitude": "80.0945507",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "10kg"
+                }
+            ]
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

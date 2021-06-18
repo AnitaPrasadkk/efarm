@@ -1,0 +1,59 @@
+.modal-header {
+    border: 0;
+    button.close {
+        outline: 0;
+    }
+}
+.modal-body {
+    padding: 1rem 1rem;
+    &.marl-16 {
+        padding: 1rem;
+    }
+}
+.user-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.share-icons {
+    display: flex;
+    align-items: center;
+    button {
+      border: none;
+      background: none;
+      i {
+        font-size: 25px;
+        color: #007bff;
+      }
+    }
+    .fb-share {
+      padding: 0 6px;
+    }
+    .fb-share i {
+      font-size: 25px;
+    }
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  tr {background-color: #9c9ea0;}
+  tr:nth-child(odd) {background-color: #f2f2f2;}
+.close-btn {
+   margin-top: 25px;
+        .btn{
+        display: block;
+        margin: 0 auto;
+        background-color: #1fa229;
+        font-weight: bold;
+        border-radius: 20px;
+        width: 100%;
+        color: #fff;
+        font-size: 16px;
+        width: 30%;
+    }
+}

@@ -1,0 +1,53 @@
+<div class="modal-header">
+    <h4 class="modal-title">Post Preview</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalRef.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div *ngIf="productDetails">
+        <div class="user-details">
+            <div>
+                <div>Name: <b>{{productDetails.name}}</b></div>
+                <div>User Name: {{productDetails.userName}}</div>
+            </div>
+            <div class="share-icons">
+                <!-- <button>
+                    <i class="fa fa-facebook-square"></i>
+                </button> -->
+                <div class="fb-share" data-layout="button"
+                    data-size="large"><a target="_blank"
+                    [attr.href]="'https://www.facebook.com/sharer/sharer.php?u=' + fbShareUrl"
+                        class="fb-xfbml-parse-ignore"><i class="fa fa-facebook-square"></i></a></div>
+                <button (click)="modalRef.close();util.chatOptions.open = true; util.chatOptions.minimize = false;" *ngIf="productDetails?.userName !== currentUser?.userName">
+                    <i class="fa fa-comments-o"></i>
+                </button>
+                <button (click)="notifyUser(productDetails)" *ngIf="productDetails?.userName !== currentUser?.userName">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <th>Product Type</th>
+                <th>Sub Type</th>
+                <th>Quantity</th>
+                <th>Post Type</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{productDetails.productType}}</td>
+                    <td>{{productDetails.subType}}</td>
+                    <td>{{productDetails.quantity}}</td>
+                    <td>{{constObj.POST_DISPLAY_TEXT[productDetails.postType]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!productDetails" class="empty-basket-info">
+        <p>It seems to be empty</p>
+    </div>
+    <div class="close-btn">
+        <button type="button" class="btn" (click)="modalRef.close()">Close</button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/assets/images/farmer_image.jpg');
+    // min-height: 450px;
+    background-size: cover;
+    // background-color: #696d71;
+    padding: 25px;
+    .loginForm {
+        max-width: 414px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 25px;
+        color: #000;
+        > div {
+            margin: 0 auto;
+        }
+        h1 {
+            margin: 15px 0;
+            text-align: center;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        .user-image {
+            text-align: center;
+            margin: 15px 0;
+            i {
+            font-size: 150px;
+            color: #cc0000;
+            }
+        }
+        }
+}
+@media (max-width: 767px) {
+.login-container {
+    .loginForm {
+        max-width: 100%;
+        }
+    }
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 20px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}

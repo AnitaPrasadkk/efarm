@@ -1,0 +1,49 @@
+{
+    "response": {
+        "details": [
+            {
+                "username": "publisher@cfc2020.com",
+                "name": "publish",
+                "latitude": 11.127122499999999,
+                "longitude": 78.6568942,
+                "requestType": "publish",
+                "items": [
+                    {
+                        "type": "Food",
+                        "subType": "Rice",
+                        "quantity": "25 Kg",
+                        "requestType": "publish",
+                        "id": "12345"
+                    },
+                    {
+                        "type": "Food",
+                        "subType": "Dhaal",
+                        "quantity": "10 Kg",
+                        "requestType": "publish",
+                        "id": "12345"
+                    }
+                ]
+            },
+            {
+                "username": "palraj@cfc2020.com",
+                "name": "palraj",
+                "latitude": 11.125353933572597,
+                "longitude": 78.65560673967283,
+                "requestType": "publish",
+                "items": [
+                    {
+                        "type": "Food",
+                        "subType": "Dhaal",
+                        "quantity": "10 Kg",
+                        "requestType": "request",
+                        "id": "12345"
+                    }
+                ]
+            }
+        ],
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

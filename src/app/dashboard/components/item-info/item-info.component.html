@@ -1,0 +1,77 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{crudConstants[actionType]?.heading}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="emitSuccess(false)">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <!-- <div *ngIf="!onSuccess else successMsg"> -->
+        <form [formGroup]="itemInfoForm" (ngSubmit)="onSubmit()" *ngIf="actionType !== 'delete' else deleteTem">
+            <div class="form-group">
+                <select formControlName="type" name="type" class="form-control"
+                    [class.filled]="itemInfoForm.get('type').value">
+                    <option value="">Select type</option>
+                    <option [ngValue]="type" *ngFor="let type of itemInfoConstants.TYPES">{{type}}</option>
+                </select>
+                <label for="type" class="form-label">Type</label>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="subType" class="form-control"
+                    [class.filled]="itemInfoForm.get('subType').value" />
+                <label for="subType" class="form-label">Sub Type</label>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="quantity" class="form-control"
+                    [class.filled]="itemInfoForm.get('quantity').value" />
+                <label for="quantity" class="form-label">Quantity</label>
+            </div>
+            <div class="form-group">
+                <select formControlName="requestType" name="requestType" class="form-control"
+                    [class.filled]="itemInfoForm.get('requestType').value">
+                    <option value="">Select Request Type</option>
+                    <option [ngValue]="requestType.key" *ngFor="let requestType of itemInfoConstants.REQUEST_TYPES">
+                        {{requestType.dispText}}
+                    </option>
+                </select>
+                <label for="requestType" class="form-label">Request Type</label>
+            </div>
+            <div class="form-group btn-container">
+                <button type="submit" class="btn btn-outline-dark" [disabled]="itemInfoForm.invalid">Submit</button>
+                <button type="button" class="btn btn-outline-dark" (click)="emitSuccess(false)">Cancel</button>
+            </div>
+        </form>
+        <ng-template #deleteTem>
+            <div class="delete-item">
+                <table>
+                    <thead>
+                        <th>Product Type</th>
+                        <th>Sub Type</th>
+                        <th>Quantity</th>
+                        <th>Post Type</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{itemObj.productType}}</td>
+                            <td>{{itemObj.subType}}</td>
+                            <td>{{itemObj.quantity}}</td>
+                            <td>{{itemObj.postType}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-grp">
+                    <button type="button" class="btn btn-outline-dark" (click)="onSubmit()">Yes</button>
+                    <button type="button" class="btn btn-outline-dark" (click)="emitSuccess(false)">No</button>
+                </div>
+            </div>
+        </ng-template>
+    <!-- </div>
+    <ng-template #successMsg>
+        <div class="success-tick">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <p>{{crudConstants[actionType]?.successMsg}}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn success-btn btn-outline-dark" (click)="emitSuccess()">Ok</button>
+        </div>
+    </ng-template> -->
+</div>

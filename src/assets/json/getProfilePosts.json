@@ -1,0 +1,198 @@
+{
+    "response": {
+        "details": {
+            "notificationDetails": [
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-06T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-05T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-06T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-04T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-08T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-08T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-08T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-08T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                },
+                {
+                    "postedUserName": "carepas.test@gmail.com",
+                    "latitude": "89765432",
+                    "notficationDate": "1999-06-08T00:00:00.000+0000",
+                    "receiverUserName": "sample.test@gmail.com",
+                    "longitude": "2748743"
+                }
+            ],
+            "profileDetails": [
+                {
+                    "id": 7,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472770",
+                    "longitude": "80.0945367",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "25Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "HelpMe",
+                    "status": null,
+                    "quantity": "5Kg"
+                },
+                {
+                    "id": 10,
+                    "userName": "sample.test7@gmail.com",
+                    "productType": "Food",
+                    "subType": "Dhall",
+                    "latitude": "13.0472700",
+                    "longitude": "80.0945607",
+                    "postType": "ICanHelp",
+                    "status": null,
+                    "quantity": "5Kg"
+                }
+            ]
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

@@ -1,0 +1,96 @@
+<div style="height: 100%;" class="root-container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="header">e-Farm!</span>
+      <span class="current-user-name">{{userData?.userInfo?.name}}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <div class="account-info">
+          <i class="material-icons">account_circle</i>
+          <span>Welcome {{userData?.userInfo?.name || 'Guest'}}</span>
+        </div>
+        <a href="javascript: void(0)" mat-list-item (click)="navigate('/dashboard')">Home <i
+            class="material-icons">
+            home
+          </i></a>
+        <a href="javascript: void(0)" mat-list-item (click)="navigate('/dashboard/profile')">Profile <i
+            class="material-icons">
+            receipt
+          </i></a>
+        <a href="javascript: void(0)" *ngIf="userData?.loggedIn" (click)="navigate('/auth/sign-in', true)"
+          mat-list-item>Sign Out <i class="material-icons">
+            power_settings_new
+          </i></a>
+        <a href="javascript: void(0)" *ngIf="!userData?.loggedIn" (click)="navigate('/auth/sign-in')" mat-list-item>Sign
+          In <i class="material-icons">
+            exit_to_app
+          </i></a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div class="app-container" id="appContainer" 
+      (drop)="drop($event)" 
+      (dragover)="allowDrop($event)" (touchend)="drop($event)">
+        <router-outlet></router-outlet>
+        <app-spinner></app-spinner>
+        <div class="notification-container" *ngIf="userData?.loggedIn" draggable="true" 
+        (dragstart)="drag($event)" (touchmove)="dragMove($event)" id="notificationBell">
+          <button class="notification" [ngbPopover]="notificationAcc" (shown)="profileService.readNotificationCount = profileService.notificationDetails?.length">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <span *ngIf="(profileService.notificationDetails?.length - profileService.readNotificationCount) > 0"
+              class="count">{{profileService.notificationDetails?.length - profileService.readNotificationCount}}</span>
+          </button>
+        </div>
+        <div *ngIf="utilService.chatOptions.enable" class="chat-container">
+          <div class="chat-content"
+            [ngClass]="{'active': utilService.chatOptions.open, 'mimimized': utilService.chatOptions.minimize}">
+            <div class="chat-control" *ngIf="utilService.chatOptions.open">
+              <button (click)="utilService.chatOptions.minimize = true" *ngIf="!utilService.chatOptions.minimize"
+                class="minimized-btn">
+                <i class="fa fa-window-minimize" aria-hidden="true"></i>
+              </button>
+              <button (click)="utilService.chatOptions.minimize = false" *ngIf="utilService.chatOptions.minimize">
+                <i class="fa fa-window-maximize" aria-hidden="true"></i>
+              </button>
+              <button (click)="utilService.chatOptions.open = false"
+                (click)="utilService.chatOptions.open = false; utilService.chatOptions.minimize = false;">
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+            <iframe id="chat-window" class="chat-window" [src]="loginUrl | safe">
+            </iframe>
+          </div>
+          <a class="chat-icon" href="javascript: void(0)" (click)="utilService.chatOptions.open = true"
+            *ngIf="!utilService.chatOptions.open">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<ng-template #notificationAcc>
+  <div clas="notification-content">
+    <div *ngIf="profileService.notificationDetails.length else notificationsNotFound">
+        <div *ngFor="let item of profileService.notificationDetails | orderBy: notficationDate; let i  index" class="notify-msg" style ="background-color: #0b8426d9; color: #fff; margin: 3px; padding: 5px;" (mouseover)="pop($event, 'hover')" (mouseout)="pop($event, 'out')">
+          <a href="mailto:{{item.postedUserName}}?Subject=Hi I am available now" style="color: #fff; font-weight: bold; text-decoration: underline;" target="_blank">{{item.postedUserName}}</a> have notified you on {{item.notficationDate | date:'MMM d, yyyy' }}
+        </div>
+  </div>
+  <ng-template #notificationsNotFound>
+      <div class="notification-empty" style="color: #6c757d;
+      margin: 3px;
+      padding: 5px;
+      text-align: center;
+      font-weight: bold;">
+        You don't have any notifications
+      </div>
+    </ng-template>
+    </div>
+</ng-template>

@@ -1,0 +1,13 @@
+{
+    "response": {
+        "details": {
+            "userName": "publisher@cfc2020.com",
+            "name": "publisher",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVlNDRlZjBhZmY1NjdlZThlMDI5MWUyYyIsIm5hbWUiOiJWaW5vZGgiLCJlbWFpbCI6InZpbm9kaGVjNEBnbWFpbC5jb20iLCJwaG9uZU5vIjoiOTQ0MzUyNTA1MiIsInBhc3N3b3JkIjoiJDJhJDEwJHpBcW9iYmFQUmxZcVlCakFNRnNIQ3UxM1pYZDJmbjYzSFhqMi9sSnd4eHR4b29MRERWMVBLIiwiYXBwYXJ0bWVudElkIjoiNWUzZDI4ZTlmN2M2MjFiZTI0OTI0MDE5IiwiZmxhdE5vIjoiQTEiLCJyb2xlIjoidXNlciIsIl9fdiI6MH0sImlhdCI6MTU4MTU3NjE2NH0.8xqQHgsy0_tZXw8H_y1tD2X3WrNXw1HOG0fMa2l9NJc"
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

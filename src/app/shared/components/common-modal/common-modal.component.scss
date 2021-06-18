@@ -1,0 +1,19 @@
+.modal-container {
+.modal-body {
+    text-align: center;
+    font-size: 20px;
+    h2 {
+        font-weight: bold;
+    }
+}
+.error-icon {
+&.success i{
+ color: #1fa229;   
+}
+    i {
+    font-size: 75px;
+    color: #cc0000;
+    margin: 25px 0;
+}
+}
+}

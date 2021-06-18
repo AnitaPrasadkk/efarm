@@ -1,0 +1,14 @@
+{
+    "response": {
+        "details": {
+            "Type": "Food",
+    		"SubType": "Rice",
+        	"Quantity": "25 Kg",
+        	"Status": "Posted"
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

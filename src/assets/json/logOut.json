@@ -1,0 +1,11 @@
+{
+    "response": {
+        "details": {
+            "logout": "publisher@cfc2020.com"
+        },
+        "status": {
+            "statusDesc": "Success",
+            "statusCode": "0000"
+        }
+    }
+}

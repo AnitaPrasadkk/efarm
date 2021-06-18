@@ -1,0 +1,150 @@
+// @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+.profile-container {
+    color: #000;
+    padding: 40px 20px;
+    .order-overview {
+        margin-bottom: 20px;
+    }
+    .btn {
+        background: none;
+        border: none;
+        box-shadow: none;
+        color: #000;
+        font-weight: bold;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        color: #000;
+      }
+      
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      tr {background-color: #9c9ea0;}
+      tr:nth-child(odd) {background-color: #f2f2f2;}
+      td {
+          button {
+            border: 0;
+            background: none;
+            i {
+                font-size: 18px;
+            }
+            &.edit i {
+                color: #0c3198;;
+            }
+            &.delete i {
+                color: #cc0000;
+            }
+            &.view i{
+                color: #007bff;
+            }
+          }
+      }
+      .badge {
+        border-radius: 0;
+        font-size: 12px;
+        line-height: 1;
+        padding: .375rem .5625rem;
+        font-weight: normal
+    }
+   
+    .badge-outline-primary {
+        color: #fff;
+        font-weight: bold;
+        background: #28a745;
+        border: 1px solid #04380f;
+    }
+   
+    .badge.badge-pill {
+        border-radius: 10rem
+    }
+}
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion{
+    border: 2px solid #3485ef;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#accordion .panel{
+    border: none;
+    border-bottom: 2px solid #3485ef;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+}
+#accordion .panel:last-child{
+    border-bottom: none;
+}
+#accordion .panel-heading{
+    padding: 0;
+    border: none;
+}
+#accordion h5.panel-title {
+    margin-bottom: 0;
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    background: #3485ef;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a.collapsed{
+    background: #fff;
+    color: #3485ef;
+}
+#accordion .panel-title a.collapsed:hover{
+    background: #3485ef;
+    color: #fff;
+}
+#accordion .panel-title a:after,
+#accordion .panel-title a.collapsed:after{
+   border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 15px;
+	position: absolute;
+    top: 25px;
+    right: 25px;
+	transform: rotate(135deg);
+	vertical-align: top;
+	width: 15px;
+    transition: all 0.3s ease-in-out 0s;
+}
+#accordion .panel-title a.collapsed:after{
+    transform: rotate(45deg);
+}
+#accordion .panel-title a.collapsed:hover:after{
+    color: #fff;
+}
+#accordion .panel-body{
+    padding: 20px;
+    border: none;
+    font-size: 14px;
+    color: #888;
+    line-height: 25px;
+}
+.no-profile-posts {
+    font-size: 40px;
+    color: #495057;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px auto;
+}
+.post-not-found {
+    font-size: 16px;
+    margin: 50px;
+}
